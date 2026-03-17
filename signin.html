@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign In - Traffic Predictor</title>
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('welcomeimage1.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+}
+.container {
+    background: rgba(0,0,0,0.7);
+    padding: 40px;
+    border-radius: 12px;
+    width: 350px;
+    text-align: center;
+    color: white;
+}
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: none;
+}
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #ff9800;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+button:hover {
+    background-color: #e68a00;
+}
+.error {
+    color: #ff4d4d;
+    font-size: 14px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+    <h2>Sign In</h2>
+    <form id="signinForm">
+        <input type="text" id="username" placeholder="Username" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <input type="date" id="dob" required>
+        <p class="error" id="loginError"></p>
+        <button type="submit">Sign In</button>
+    </form>
+</div>
+
+<script>
+document.getElementById("signinForm").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    const username = document.getElementById("username").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value.trim();
+    const dob = new Date(document.getElementById("dob").value);
+    const today = new Date();
+
+    // Age check
+    let age = today.getFullYear() - dob.getFullYear();
+    const monthDiff = today.getMonth() - dob.getMonth();
+    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < dob.getDate())) age--;
+
+    if (age < 18) {
+        document.getElementById("loginError").textContent = "You must be 18 or older to sign in.";
+        return;
+    }
+
+    // Get stored credentials
+    const storedUsername = localStorage.getItem("username");
+    const storedEmail = localStorage.getItem("email");
+    const storedPassword = localStorage.getItem("password");
+
+    if (username === storedUsername && email === storedEmail && password === storedPassword) {
+        alert("Login successful!");
+        window.location.href = "dashboard.html";
+    } else {
+        document.getElementById("loginError").textContent = "Invalid credentials.";
+    }
+});
+</script>
+</body>
+</html>

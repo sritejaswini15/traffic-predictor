@@ -1,0 +1,160 @@
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background: #0b0c10;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    overflow-y: auto;
+}
+
+h1 {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 2.5em;
+    color: #00bcd4;
+    text-shadow: 0 0 10px #00bcd4;
+}
+
+/* Horizontal intro layout */
+.intro {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    background: #1f2833;
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 1200px;
+    margin: 20px auto;
+    line-height: 1.6;
+    font-size: 16px;
+    box-shadow: 0 0 15px rgba(0, 188, 212, 0.3);
+}
+
+.intro-section {
+    flex: 1;
+    min-width: 260px;
+    margin: 10px 20px;
+}
+
+.intro-section h2,
+.intro-section h3 {
+    color: #ffd700;
+    text-shadow: 0 0 8px #ffd700;
+}
+
+.intro-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.intro-section li {
+    margin-bottom: 8px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding-bottom: 50px;
+}
+
+/* 🗺️ Map Styles */
+.map-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#liveMap {
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 188, 212, 0.3);
+    z-index: 1; 
+}
+
+
+.clock {
+    text-align: center;
+    font-size: 2em;
+    color: #00bcd4;
+    text-shadow: 0 0 10px #00bcd4;
+}
+
+.charts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    width: 90%;
+    margin: auto;
+}
+
+.chart-box {
+    background: #1f2833;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 188, 212, 0.3);
+}
+
+.gauge-box {
+    width: 300px;
+    text-align: center;
+    margin: auto;
+}
+
+.gauge {
+    position: relative;
+    width: 250px;
+    height: 125px;
+    background: conic-gradient(red 0 60deg, yellow 60deg 120deg, lime 120deg 180deg);
+    border-radius: 250px 250px 0 0;
+    margin: 0 auto;
+}
+
+.needle {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 3px;
+    height: 120px;
+    background: white;
+    transform-origin: bottom center;
+    transform: rotate(45deg);
+    transition: transform 1s ease;
+}
+
+.speed-display {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+    text-shadow: 0 0 8px black;
+}
+
+/* Upload buttons */
+.upload-section {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.upload-btn {
+    background: #00bcd4;
+    color: black;
+    border: none;
+    padding: 12px 25px;
+    margin: 10px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.upload-btn:hover {
+    background: #ffd700;
+    color: #000;
+    box-shadow: 0 0 10px #ffd700;
+}

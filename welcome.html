@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welcome - Traffic Predictor</title>
+<style>
+/* Make body take full screen and set background image */
+body {
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('welcomeimage.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+/* Semi-transparent container for buttons */
+.container {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5); /* makes buttons readable */
+    padding: 40px;
+    border-radius: 15px;
+}
+
+/* Button styling */
+button {
+    padding: 15px 30px;
+    margin: 15px;
+    border: none;
+    border-radius: 8px;
+    background-color: #ff9800;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #e68a00;
+}
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>Welcome to Traffic Predictor</h1>
+    <button onclick="location.href='signup.html'">Sign Up</button>
+    <button onclick="location.href='signin.html'">Sign In</button>
+</div>
+</body>
+</html>
